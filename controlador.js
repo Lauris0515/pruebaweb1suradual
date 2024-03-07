@@ -1,7 +1,10 @@
 
-let cajaNombre = document.getElementById('nombre');
-let cajaEmail = document.getElementById('email');
-let cajaMensaje = document.getElementById('mensaje');
+
+let cajaNombre = document.getElementById("nombre");
+let cajaEmail = document.getElementById("email");
+let cajaTelefono = document.getElementById("telefono");
+let cajaAsunto = document.getElementById("asunto")
+let cajaMensaje = document.getElementById("mensaje");
 
 document.getElementById('enviar').addEventListener('click', function(evento) {
 
@@ -9,14 +12,30 @@ document.getElementById('enviar').addEventListener('click', function(evento) {
     evento.preventDefault()
    
     let nombre = cajaNombre.value
-    let email.cajaEmail.value
+    let email = cajaEmail.value
     let telefono = cajaTelefono.value
     let asunto = cajaAsunto.value
     let mensaje = cajaMensaje.value
 
-    console.log('Nombre:', nombre)
-    console.log('Email:', email)
-    console.log('Mensaje:', mensaje)
+    
+
+   if(nombre=="" && email=="" && telefono=="" && asunto=="" && mensaje==""){
+    Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Tus datos no estan completos",
+      });
+    
+    
+   }
+   else{
+    Swal.fire({
+        icon: "correcto",
+        text: "Tus datos han sido almacenados",
+        icon: "success"
+      })
+
+   }
 
    
 });
